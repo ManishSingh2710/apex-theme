@@ -1,0 +1,34 @@
+.auth-component{
+  height: 100%;
+  .card{
+    width: 400px;
+  }
+  .err{
+    color: red;
+    font-size: 12px;
+    margin: 5px 0px 0px 5px;
+    text-align: left;
+  }
+  .field-icon {
+    float: right;
+    margin-right: 8px;
+    margin-left: -25px;
+    margin-top: -25px;
+    position: relative;
+    z-index: 2;
+  }
+  .field-icon:hover{
+    cursor: pointer;
+  }
+  .form-group{
+    text-align: left;
+  }
+  .auth-logo img{
+    height: 40px;
+    width: 40px;
+  }
+  .back-login{
+    color: #616161;
+  }
+}
+

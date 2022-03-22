@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Imported css files for DataTable */
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+@import '~ngx-toastr/toastr';
+
+body{
+  background-color: #fff;
+}
+.ng-dropdown-panel-items{
+  padding-top: 8px;
+}
+
+.custom-selection-style .ng-option{
+  padding: 5px 0 5px 5px;
+  border-bottom: 1px solid #EEE;
+  background-color: #fff;
+  color: #000;
+}
+
+.custom-selection-style .ng-option.ng-option-selected,
+.custom-selection-style .ng-option.ng-option-marked{
+  background-color: #975AFF !important;
+}
+
+.custom-selection-style .ng-value-container .ng-value {
+  border-radius: 10px;
+  padding: 0 8px;
+  margin-right: 5px;
+  color: #fff;
+  background-color: #975AFF !important;
+}
+
+.custom-selection-style .ng-value .ng-value-icon.right {
+  border-left: 1px solid #975AFF !important;
+}
+
+numeric-cell{
+  width: 100%;
+}
+
+.confirmationModal .modal-content{
+  width: 400px;
+}
+
+.form-label{
+  text-transform: capitalize;
+}

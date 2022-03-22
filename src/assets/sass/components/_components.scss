@@ -1,0 +1,26 @@
+// Common Pages Title
+.page-title{
+  margin-left: 5px;
+  font-size: 32px;
+  color: #616161;
+}
+
+// Media Object
+.media-bordered {
+  .media {
+    border-top: 1px solid $border-color;
+
+    &:first-child {
+      border-top: 0;
+    }
+  }
+}
+.media {
+  padding: 1rem 0;
+}
+
+// Pagination
+.page-link {
+  border-radius: 0.35rem;
+  margin-left: 5px;
+}

@@ -1,0 +1,36 @@
+stages:
+  - build
+  - deploy
+
+build:
+  image: node:14.18.2
+  stage: build
+  only:
+    - staging
+    - pre-production
+    - production
+  artifacts:
+    paths:
+      - dist/
+  script: npm run build-${CI_COMMIT_REF_NAME}
+  before_script:
+    - npm install -g @angular/cli
+    - npm install
+
+deploy:
+  image: python:latest
+  stage: deploy
+  only:
+    - staging
+    - pre-production
+    - production
+  dependencies:
+    - build
+  script:
+    - bucket_name=${CI_COMMIT_REF_NAME/-/_}_bucket_name
+    - cloud_front_id=${CI_COMMIT_REF_NAME/-/_}_cloud_front_id
+    - aws s3 rm s3://${!bucket_name} --recursive
+    - aws s3 cp dist/ s3://${!bucket_name} --recursive
+    - aws cloudfront create-invalidation --distribution-id ${!cloud_front_id} --paths '/*'
+  before_script:
+    - pip install awscli --upgrade
